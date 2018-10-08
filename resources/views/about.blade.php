@@ -2,5 +2,6 @@
 
 @section('content')
 
-    <h1>My first website</h1>
+    <h1>About Us</h1>
+    <p>hehehehehehehe</p>
 @endsection
