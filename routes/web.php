@@ -19,3 +19,8 @@ Route::get('/contact','PagesController@contact');
 
 
 Route::get('/projects','Projectscontroller@index');
+
+Route::post('/projects','Projectscontroller@store');
+
+
+Route::get('/projects/create','Projectscontroller@create');

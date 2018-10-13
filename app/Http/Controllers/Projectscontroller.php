@@ -10,11 +10,29 @@ class Projectscontroller extends Controller
     //
     public function index(){
 
-        $project=Project::all();
+        $projects=Project::all();
 
-        return $project;
-        return view('projects.index');
+//        return $projects;
+        return view('projects.index',compact('projects'));
     }
 
 
+    public function create(){
+
+        return view('projects.create');
+
+    }
+
+    public function store(){
+
+        $project=new Project();
+        $project->title= request('title');
+        $project->description=request('description');
+        $project->save();
+
+        return redirect('/projects');
+
+    }
+
 }
+
