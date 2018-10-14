@@ -34,5 +34,24 @@ class Projectscontroller extends Controller
 
     }
 
+    public function edit($id){
+
+        $project=Project::find($id);
+        return view('projects.edit',compact('project'));
+    }
+
+    public function update($id){
+
+       // dd('hello');
+       // dd(request()->all());
+
+        $project=Project::find($id);
+        $project->title=request('title');
+        $project->description=request('description');
+        $project->save();
+        return redirect('/projects');
+
+    }
+
 }
 
